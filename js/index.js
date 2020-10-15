@@ -43,19 +43,81 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
+
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
 let cta = document.getElementById("cta-img");
 cta.setAttribute("src", siteContent["cta"]["img-src"]);
 
-let ctaText = document.querySelector(".cta-text h1");
-ctaText.textContent =siteContent ["cta"]["h1"];
-
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 
-const a = document.getElementsByTagName("Services");
+let header = document.getElementsByTagName("h1");
+header[0].textContent = (siteContent["cta"]["h1"]);
+header[0].innerText = "DOM \n Is \n Awesome";
 
-let ctaTextBut = document.getElementsByTagName("button")
-ctaTextBut[0].textContent = (siteContent["cta"]["button"])
+//button
+let ctaTextBut = document.getElementsByTagName("button");
+ctaTextBut[0].textContent = (siteContent["cta"]["button"]);
+
+//nav bar
+const navBarA = document.querySelectorAll("nav a");
+navBarA[0].textContent = ["Services"];
+
+const navBarB = document.querySelectorAll("nav a");
+navBarB[1].textContent = ["Product"];
+
+const navBarC = document.querySelectorAll("nav a");
+navBarC[2].textContent = ["Vision"];
+
+const navBarD = document.querySelectorAll("nav a");
+navBarD[3].textContent = ["Features"];
+
+const navBarE = document.querySelectorAll("nav a");
+navBarE[4].textContent = ["About"];
+
+const navBarF = document.querySelectorAll("nav a");
+navBarF[5].textContent = ["Contact"];
+
+
+//Headings
+let headings = document.getElementsByTagName("h4");
+headings[0].textContent = (siteContent["main-content"]["features-h4"]);
+headings[1].textContent = (siteContent["main-content"]["about-h4"]);
+headings[2].textContent = (siteContent["main-content"]["services-h4"]);
+headings[3].textContent = (siteContent["main-content"]["product-h4"]);
+headings[4].textContent = (siteContent["main-content"]["vision-h4"]);
+headings[5].textContent = (siteContent["contact"]["contact-h4"]);
+
+
+//Paragraph text
+let paragraphs = document.getElementsByTagName("p");
+paragraphs[0].textContent = (siteContent["main-content"]["features-content"]);
+paragraphs[1].textContent = (siteContent["main-content"]["about-content"]);
+paragraphs[2].textContent = (siteContent["main-content"]["services-content"]);
+paragraphs[3].textContent = (siteContent["main-content"]["product-content"]);
+paragraphs[4].textContent = (siteContent["main-content"]["vision-content"]);
+paragraphs[6].textContent = (siteContent["contact"]["phone"]);
+paragraphs[7].textContent = (siteContent["contact"]["email"]);
+paragraphs[8].textContent = (siteContent["footer"]["copyright"]);
+
+// Change the color of the navigation text to be green.
+//Did that above under every Nav button.
+
+// Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system. You can call them whatever you want.
+
+const firstNav = document.createElement('a');
+const lastNav = document.createElement('a');
+const nav = document.querySelector('nav');
+
+firstNav.style.color = 'green';
+lastNav.style.color = 'green';
+
+firstNav.textContent = 'Home';
+lastNav.textContent = 'FAQs';
+
+nav.append(firstNav);
+nav.prepend(lastNav);
+
+paragraphs[5].textContent = '123 Way 456 Street \n Somewhere, USA'
